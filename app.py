@@ -6,6 +6,7 @@ app = Flask(__name__)
 def calculate_sum(num1, num2):
     return num1 + num2
 
+
 @app.route('/sum', methods=['POST'])
 def sum_route():
     data = request.get_json()
