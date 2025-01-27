@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+
 def calculate_sum(num1, num2):
     return num1 + num2
 
