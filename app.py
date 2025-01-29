@@ -65,6 +65,12 @@ def sum_route():
     return jsonify({'result': result})
 
 
+@app.route('/sum/result/<int:result>', methods=['GET'])
+def get_sum_by_result(result):
+    sums = db.session.execute(db.select(Sum).filter_by(result=result)).scalars()
+    return sums_schema.jsonify(sums), 200
+
+
 with app.app_context():
     db.drop_all()
     db.create_all()

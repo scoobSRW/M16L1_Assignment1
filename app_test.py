@@ -1,5 +1,5 @@
-from app import calculate_sum
-
+import pytest
+from app import calculate_sum, app
 
 def test_positive_sum():
     """Test case for positive numbers."""
@@ -19,3 +19,10 @@ def test_mixed_sum():
 def test_zero_sum():
     """Test case for zero as input."""
     assert calculate_sum(0, 0) == 0
+
+
+def test_invalid_filter_value():
+    """Test case for invalid filter value."""
+    client = app.test_client()
+    response = client.get('/sum/result/invalid')
+    assert response.status_code == 404
