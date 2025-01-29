@@ -77,5 +77,5 @@ jobs:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          service-id: ${{ secrets.SERVICE_ID }} # can be found in your Deploy Hook
-          api-key: ${{ secrets.RENDER_API_KEY }} # create your API key in Render Dashboard > Account Settings
+          service-id: ${{ secrets.SUM_RENDER_SERVICE_KEY }} # can be found in your Deploy Hook
+          api-key: ${{ secrets.SUM_RENDER_API_KEY }} # create your API key in Render Dashboard > Account Settings
